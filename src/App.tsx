@@ -1,14 +1,11 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Sidebar from './components/Sidebar'
 
-function Placeholder({ title }: { title: string }) {
-  return (
-    <div>
-      <h2 className="text-2xl font-semibold mb-4">{title}</h2>
-      <p className="text-slate-400">Conteúdo em construção.</p>
-    </div>
-  )
-}
+import Profile from './pages/Profile'
+import About from './pages/About'
+import Skills from './pages/Skills'
+import Projects from './pages/Projects'
+import Contact from './pages/Contact'
 
 export default function App() {
   return (
@@ -18,11 +15,12 @@ export default function App() {
       <main className="flex-1 p-8 overflow-y-auto">
         <Routes>
           <Route path="/" element={<Navigate to="/profile" />} />
-          <Route path="/profile" element={<Placeholder title="Perfil" />} />
-          <Route path="/about" element={<Placeholder title="Sobre" />} />
-          <Route path="/skills" element={<Placeholder title="Skills" />} />
-          <Route path="/projects" element={<Placeholder title="Projetos" />} />
-          <Route path="/contact" element={<Placeholder title="Contato" />} />
+
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
     </div>
